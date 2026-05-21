@@ -1,0 +1,413 @@
+Complete Pool Water Chemistry Manual
+For residential pool owners — maintained for clarity, safety, and 
+
+Quick Troubleshooting Table
+Symptom
+Most Likely Cause
+Immediate Action
+See Section
+Cloudy / dull water
+High pH, low FC, or poor filtration
+Test FC & pH; shock if needed; clean filter
+1.1, 1.3
+Green or visible algae
+Low FC, high CYA (chlorine lock)
+Brush, shock, run pump 24h, re-test CYA
+1.1, 1.6
+Strong “chlorine” smell
+High combined chlorine (chloramines)
+Shock to breakpoint (10× CC reading)
+1.2, 3.2
+Eye / skin irritation after swimming
+pH out of range, high CC, or very high FC
+Test pH & CC; shock if CC >0.2
+1.2, 1.3
+White flaky deposits on tile / equipment
+High pH + high CH + high TA ? scale
+Lower pH, use scale inhibitor, check CH
+1.4, 1.5, 3.3
+Pitted plaster / grout erosion
+Low CH or consistently low pH
+Raise CH, adjust pH, monitor alkalinity
+1.4, 1.3, 3.5
+Brown / blue / green stains
+Metals (iron, copper, manganese)
+Add metal sequestrant; check fill water
+1.9, 3.8
+Chlorine disappears quickly in sunlight
+Low CYA (stabilizer)
+Add cyanuric acid to 30–50 ppm
+1.6, 3.6
+Salt generator not producing chlorine
+Salt level too low, cell scaled, or flow sensor tripped
+Check salt; clean cell; increase runtime
+1.7, 3.7
+pH constantly drifting down
+Low TA ? buffer inadequate
+Raise TA with baking soda
+1.4, 3.4
+pH stuck high, hard to lower
+High TA
+Lower TA via acid + aeration over days
+1.4, 3.4
+1. Core Water Chemistry Parameters & Ideal Ranges
+Each parameter is presented with its role, ideal range, and the specific impact on swimmers, surfaces, and equipment.
+1.1 Free Chlorine (FC) – Sanitizer
+Role – Kills bacteria, viruses, algae.
+Ideal Range – Without CYA: 1–3 ppm. With CYA 30–50 ppm: 3–5 ppm (minimum FC = 7.5% of CYA, e.g., CYA 40 ? FC ? 3 ppm).
+Swimmer Impact – Too low = unsafe water (risk of illness). Too high (>10 ppm) = skin/eye irritation, strong odor.
+Surface Impact – Very high FC (prolonged shock levels) can fade vinyl liners; low FC allows algae growth ? staining.
+Equipment Impact – Adequate FC prevents chloramines that corrode metal. High FC alone is not corrosive to equipment at normal pH.
+Equipment' specific note – Salt water chlorine generators (SWGs) maintain FC continuously; still test weekly. Ozone/UV systems reduce FC demand but do not replace a residual.
+1.2 Combined Chlorine (CC) – Chloramines
+Role – Formed when FC combines with ammonia / organics. Indicates oxidation demand.
+Ideal Range – 0 ppm (? 0.2 ppm acceptable).
+Swimmer Impact – Causes eye burn, skin irritation, and the “chlorine smell”.
+Surface Impact – Biofilm promoter; can contribute to algae and surface staining.
+Equipment Impact – Chloramines aggressively attack heat exchangers, pump seals, and stainless steel.
+Action – Shock to breakpoint (10× CC reading) if >0.2 ppm (see 3.2).
+1.3 pH – Acidity / Alkalinity
+Role – Determines chlorine efficacy and water balance.
+Ideal Range – 7.2–7.8 (optimal 7.4–7.6; salt pools target 7.2–7.6 to reduce scaling).
+Swimmer Impact – <7.0: stings eyes, dries skin. >8.0: chlorine becomes 50%+ less effective, irritation from chloramines.
+Surface Impact – Low pH etches plaster, grout, stone, and corrodes metal fittings. High pH causes calcium carbonate scale on tile, liner, light rings.
+Equipment Impact – Low pH attacks pumps, heaters, ladders (metal corrosion). High pH leads to scale inside pipes, heater elements, salt cells.
+Equipment' specific note – Gas heaters are highly sensitive to low pH; scale from high pH reduces heat exchanger efficiency and can cause cracking.
+1.4 Total Alkalinity (TA) – pH Buffer
+Role – Bicarbonate buffer that stabilizes pH.
+Ideal Range – Plaster: 80–120 ppm; vinyl/fiberglass: 80–100 ppm; SWG pools (scaling risk): 60–80 ppm.
+Swimmer Impact – Low TA ? pH bounce ? eye/skin discomfort. High TA indirectly keeps pH high ? chlorine inefficiency.
+Surface Impact – Low TA = aggressive water (etching plaster). High TA = scale formation when pH rises.
+Equipment Impact – pH instability (low TA) leads to metal corrosion; high TA + high pH = scale on heater cores and salt cells.
+Equipment' specific note – SWG cells raise pH continuously, so keeping TA lower (6080) helps resist scaling. Cartridge filters clog faster with scale particles.
+1.5 Calcium Hardness (CH) – Mineral Balance
+Role – Prevents water from being too “hungry” (corrosive) or too “full” (scale forming).
+Ideal Range – Plaster/pebble: 200–400 ppm; vinyl: 150–250 ppm; fiberglass: 200–300 ppm.
+Swimmer Impact – Not a direct irritant, but scale particles can abrade skin.
+Surface Impact – Low CH: water leaches calcium from plaster/grout ? pitting, roughness. High CH: white scale on waterline and surfaces.
+Equipment Impact – Scale deposits on pump impellers, heater elements, salt cell blades ? reduced flow, overheating, cell failure.
+Equipment' specific note – Electric heat pumps are particularly susceptible to scale because of high heat exchange surfaces; maintain CH at lower end of range if water is hard.
+1.6 Cyanuric Acid (CYA) – Stabilizer
+Role – Shields chlorine from UV degradation (sunlight).
+Ideal Range – Outdoor: 30–50 ppm; indoor: 0–20 ppm. Never >100 ppm; SWG pools may go up to 80 ppm.
+Swimmer Impact – Too low: chlorine burns off ? unsafe water. Too high (>100 ppm): “chlorine lock” ? algae and illness risk.
+Surface Impact – Indirect – locked chlorine leads to algae, staining surfaces.
+Equipment Impact – High CYA forces much higher FC targets, increasing chemical cost and stressing feeders.
+Equipment' specific note – Liquid chlorine dosing systems / bleach pumps must be calibrated to the higher FC demand if CYA is high.
+1.7 Salt (Sodium Chloride) for SWG Pools
+Role – Electrolyte for chlorine generation.
+Ideal Range – 2700–4500 ppm; typical target 3200 ppm (always per manufacturer).
+Swimmer Impact – Low salt: no chlorine production. High salt (>5000 ppm): salty taste, possible skin feel.
+Surface Impact – High salt can be corrosive to some natural stone coping (e.g., limestone).
+Equipment Impact – Low salt can damage cell (electrolysis with insufficient conductivity ? coating degradation). High salt can trip overload/erratic reading.
+Equipment' specific note – Check salt cell cleaning schedule (scale appears as white flaky deposits on plates).
+1.8 Temperature
+Role – Affects chemical reaction rates, chlorine demand, and swimmer comfort.
+Ideal Range – 25–29 °C (78–84 °F) for comfort. Higher temps accelerate algae growth and FC consumption.
+Impact on Parameters – For every 10 °C rise, chemical reactions roughly double. Hot tubs require faster testing.
+Equipment' specific note – High water temperature + high CH + high pH = rapid scaling inside heaters.
+1.9 Secondary but Critical Parameters
+Parameter
+Ideal Range
+Importance
+Affected Equipment
+Phosphates
+<100 ppb (ideally 0)
+Algae fuel; high levels demand more chlorine
+Clogged filters from algae diet off
+Iron
+0 ppm (<0.2)
+Stains surfaces brown/orange
+Stains pump housings, corrodes heat exchangers
+Copper
+0 ppm (<0.2)
+Green/blue stains, green hair
+Attacks copper heat exchangers, stains
+Manganese
+0 ppm (<0.2)
+Purple black staining
+Same as iron
+Total Dissolved Solids (TDS)
+Non-salt: <2000 ppm above startup
+High TDS reduces chlorine efficiency, taste
+Increased conductivity ? corrosion in older metal parts
+2. Measuring Methods & Supplies
+Select a method based on your accuracy needs and frequency. Combination recommended: liquid FASDPD weekly + strips/digital testers for quick checks.
+Method
+Pros
+Cons
+Accuracy
+Where to Obtain
+Test Strips (e.g., AquaChek)
+Fast, cheap, multi parameter
+Color matching subjective, humidity sensitive
+Low medium
+Pool stores, Amazon
+Liquid Reagent Kits (DPD/Oto, e.g., Taylor K2005)
+Good accuracy, widely used
+Drop counting, reagent expiry (~1 yr)
+Medium
+Pool stores, taylortechnologies.com
+FASDPD Titration (Taylor K2006)
+High accuracy (±0.2 ppm FC/CC), no color matching
+Slightly slower, more expensive reagents
+High
+Online, Taylor distributors
+Digital Photometer (LaMotte ColorQ, Hanna Checker)
+Numeric readout, no color judgement
+Expensive, vials must be clean, still use reagents
+High
+Online, specialty stores
+Electronic Testers (pH pen, TDS meter)
+Instant, reusable
+Calibration required, probes degrade
+Medium High
+Amazon, pool stores
+Laboratory Analysis (mail in / store)
+Most accurate, tests metals/phosphates
+Slow, cost per test
+Very High
+Pool stores, Orenda, Taylor mail in
+Smart Monitors (WaterGuru, Sutro)
+Continuous monitoring, alerts
+Expensive, sensor replacement
+High
+Manufacturer websites
+Testing Schedule Recommendation
+* Daily / every swim day: quick pH and FC (strips or digital)
+* Weekly: full test – FC, CC, pH, TA (liquid FASDPD kit)
+* Monthly: CH, CYA, salt (if SWG)
+* Quarterly or start up: metals, phosphates, TDS – via lab or pool store
+
+3. Chemical Adjustment Procedures
+*All dosages calculated for a 40,000 L (?10,000 US gal) pool. Always verify pool volume and follow product labels. Run pump during/after addition.*
+3.1 Free Chlorine (FC)
+* To raise:
+o Liquid chlorine (sodium hypochlorite 1012.5%): ~500 mL raises FC 1 ppm. Pour slowly in front of return jet.
+o Calcium hypochlorite (granular, 6573%): pre dissolve in bucket; also adds ~7 ppm CH per 1 ppm FC.
+o Dichlor (granular, 5662%): adds 0.9 ppm CYA per 1 ppm FC.
+o Trichlor tablets (slow release): adds 0.6 ppm CYA per 1 ppm FC; use in feeder/skimmer only.
+* To lower: Stop addition, uncover pool (sunlight). If >10 ppm, partial drain/refill.
+* Safety: Gloves, goggles, ventilation. Never mix different chlorine types, or chlorine with acid.
+3.2 Combined Chlorine / Shock
+* Breakpoint chlorination: raise FC to 10× the measured CC.
+Example: CC = 0.5 ppm ? add enough chlorine to increase FC by 5 ppm.
+Use liquid chlorine or cal hypo. Non chlorine shock (MPS) removes CC but doesn’t raise FC.
+* Keep swimmers out until FC ?5 ppm and CC ?0.2 ppm.
+3.3 pH Adjustment
+* To lower:
+o Muriatic acid (31.45%): ~500 mL / 40,000 L lowers pH 0.2. Pour slowly in front of return jet.
+o Dry acid (sodium bisulfate): ~600 g / 40,000 L. Pre dissolve.
+o Acid safety: acid resistant gloves, goggles. Always add acid to water.
+* To raise:
+o Soda ash (sodium carbonate): ~450 g raises pH 0.2. Pre dissolve.
+o Borax: ~700 g raises pH 0.2 (gentler, also buffers).
+3.4 Total Alkalinity (TA)
+* To raise: Baking soda (sodium bicarbonate). ~700 g raises TA 10 ppm. Broadcast into deep end.
+* To lower: Use muriatic acid in small doses (~200 mL), each addition targeting 10 ppm drop. After acid, aerate (point returns upward) to keep pH from crashing. Repeat over days. Test daily.
+3.5 Calcium Hardness (CH)
+* To raise: Calcium chloride flakes (pool grade). ~1.25 kg raises CH 10 ppm. Pre dissolve, add to deep end.
+* To lower: Drain and refill with soft water. Use scale inhibitor to manage existing high CH.
+3.6 Cyanuric Acid (CYA)
+* To raise: Stabilizer granules. ~370 g raises CYA 10 ppm. Add via skimmer sock (never directly onto surfaces). Takes 25 days to dissolve.
+* To lower: Only dilution (partial drain/refill).
+3.7 Salt (SWG)
+* To raise: Pool salt (solar salt, 99.8% NaCl). ~18 kg raises salt ~500 ppm. Brush to dissolve; turn off cell for 24h if large addition.
+* To lower: Drain and refill.
+3.8 Metals & Phosphates
+* Metals: Add metal sequestrant (Jack’s Magic, Metal Free) weekly. For severe staining, professional treatment needed.
+* Phosphates: Lanthanum based phosphate remover (Orenda PR10,000, SeaKlear). Follow label; clean filter after treatment.
+3.9 Safety & Handling Highlights
+* Never mix chlorine + acid (creates chlorine gas) or different chlorine products.
+* PPE: chemical resistant gloves, goggles, mask for acids/dust.
+* Add to water, not reverse; pour slowly.
+* Store chemicals cool, dry, locked, separate; keep SDS sheets.
+* Wait at least 46 h between incompatible chemicals; run pump.
+
+4. Seasonal Maintenance Rhythms
+4.1 Spring Opening (After Winter)
+1. Clean and inspect pool, remove cover, check equipment.
+2. Test fill water (well or municipal) for baseline: pH, TA, CH, metals, phosphates.
+3. Balance TA first (target 80120 ppm), then pH (7.47.6).
+4. Adjust CH if needed (protect plaster).
+5. Add CYA to 3050 ppm (if outdoor).
+6. Shock with chlorine to 1012 ppm FC; run pump 24h until FC holds and CC is 0.
+7. If salt pool, add salt once water is balanced, then run SWG.
+8. Clean or replace filter media (cartridge, sand, DE).
+Order matters – TA ? pH ? CH ? CYA ? FC (shock). CYA can be added earlier because it dissolves slowly.
+4.2 Peak Season (Summer, Heavy Use)
+* Test FC and pH daily (or every swim day).
+* Weekly full test: FC, CC, pH, TA.
+* Shock after heavy bather loads or if CC >0.2.
+* Monitor CYA monthly (sunlight and trichlor tablets can raise it slowly).
+* For SWG pools, check salt and cell every 24 weeks; clean cell if visible scale.
+* Maintain filter pressure; backwash/clean when pressure rises 810 psi.
+4.3 Autumn Closing (Pre Winter)
+1. Balance water: pH 7.27.6, TA 80120, CH in range.
+2. Add a winter algaecide or borate treatment (optional).
+3. Shock with chlorine to 1012 ppm; run pump to circulate.
+4. Lower water level for closing type (mesh cover: below returns; solid cover: just below skimmer).
+5. Add winter floater (trichlor) if climate allows; otherwise avoid.
+6. Drain and winterize equipment (pump, filter, heater, lines).
+4.4 Winter Monitoring (If not winterized)
+* Test FC and pH monthly if pool is covered and not frozen.
+* Run pump occasionally if water is circulating.
+* Ensure salt cell is off in cold water (<1015°C).
+
+5. Water Source Considerations
+Before filling (new or after drain/refill), test your source water. This shapes your initial adjustments.
+Source
+Typical Issues
+Pre treatment
+Municipal (city) water
+Often high pH, high TA, contains chlorine/chloramines
+Dechlorinate if needed; adjust TA/pH downwards
+Well water
+May contain high iron, manganese, calcium, and sometimes low pH
+Use a metal filter on fill hose; pre treat with sequestrant
+Rainwater / cistern
+Very soft, low pH, low TA, no CYA
+Raise TA, pH, CH significantly
+Lake/river water
+High organics, possible algae, low clarity
+Pre filter, shock heavily, run filter continuously, test for metals
+Fill up tip – Attach a pre filter (e.g., “RV filter” or carbon filter) to your garden hose to remove some metals and sediment, especially for well water. Add metal sequestrant as soon as pool is full if source has known metals.
+
+6. Common Myths & Mistakes
+Myth
+Reality
+Why It Matters
+“I smell chlorine, so I need more chlorine.”
+That smell is chloramines (combined chlorine). The pool needs shocking, not more sanitizer.
+Adding more without oxidation worsens irritation.
+“My pH is always high; I’ll just keep adding acid.”
+High pH often caused by high TA. Lower TA first using acid + aeration method.
+Dumping only acid results in pH yo yo and still high TA.
+“Stabilizer (CYA) doesn’t really matter.”
+CYA above 100 ppm locks chlorine, making sanitizer useless.
+The only remedy is expensive water replacement.
+“I can use any bleach from the grocery store.”
+Only plain, unscented, non“splash less” bleach (68.25%) can be used. Splash less or scented types contain additives that cause foaming and film.
+Using wrong bleach leads to chemistry problems.
+“Shock and swim is fine after an hour.”
+Most shocks require FC to drop below 5 ppm; that can take 824 hours.
+Swimmers risk skin/eye burns.
+“Trichlor tablets are maintenancefree.”
+Each tablet adds CYA; over a season CYA can climb to unmanageable levels.
+Must monitor CYA and sometimes switch to unstabilized chlorine.
+“Algaecide will clear my green pool.”
+Algaecide prevents, but once algae blooms, you must kill it with chlorine (shock) and brush/filter.
+Using only algaecide is a losing battle.
+“I don’t need to test calcium hardness in a vinyl pool.”
+Low CH can still corrode metal parts (ladders, pump, heater) even if no plaster.
+Protects equipment, not just surfaces.
+7. Equipment Specific Interlocks – How Chemistry Affects Your Gear
+Equipment
+Key Parameters
+Failure Mode
+Prevention
+Salt Chlorine Generator (SWG)
+Salt, CH, pH, CYA
+Scale on cell (high pH + high CH); low salt ? cell degradation
+Maintain lower TA (6080), pH 7.27.6, clean cell with acid when needed; salt within range
+Gas Heater
+pH, CH, TA
+Low pH ? copper heat exchanger corrosion; high pH + CH ? scale insulating tubes ? overheating, cracking
+Keep pH 7.47.6, CH at recommended range, use corrosion resistant check valve if trichlor feeder upstream
+Heat Pump (electric)
+CH, pH
+Scale buildup on titanium exchanger ? reduced efficiency, compressor damage
+Softer water preferred; maintain CH 150250
+Cartridge Filter
+pH, CH, phosphates
+Scale (hard water) or algae/phosphates clogging cartridges; low pH can degrade filter fabric
+Balanced water; regular cleaning; phosphate control
+Sand Filter
+High CYA, phosphates
+Channeling from organics/oils; algae can clog sand
+Backwash regularly; monitor CYA; occasionally deep clean sand
+DE Filter
+High CH, algae
+Scale / calcium deposits on grids; algae blinding the DE
+Same as sand; correct CH; use scale inhibitor
+Pump & Seals
+pH, chloramines
+Low pH attacks shaft seal; chloramines degrade elastomers
+Balanced pH; maintain FC to prevent chloramines
+Vinyl Liner
+FC, pH, CYA
+Very low pH ? brittle, cracking; very high FC (shock level) can fade color
+Avoid prolonged exposure to FC >10 ppm; keep pH within range
+Glossary
+* Breakpoint Chlorination – Adding enough chlorine to oxidize all combined chlorine (usually 10× the CC level).
+* Buffer – A chemical system (like TA) that resists change in pH.
+* CalHypo – Calcium hypochlorite; granular chlorine that also raises CH.
+* Chelator / Sequestrant – Chemical that binds metals, keeping them soluble and preventing staining.
+* Chloramines – Combined chlorine; formed when FC combines with ammonia/organics; causes irritation and odor.
+* CYA (Cyanuric Acid) – Stabilizer that protects chlorine from UV light.
+* Dichlor – Fast dissolving granular chlorine that contains CYA.
+* DPD – Reagent used in colorimetric chlorine tests (turns pink).
+* FASDPD – Titration method for FC/CC; drop counting from pink to clear; more precise than DPD.
+* Free Chlorine (FC) – The active, available chlorine that sanitizes.
+* Langelier Saturation Index (LSI) – A calculation using pH, TA, CH, temperature, and TDS to predict scale or corrosion tendency; ideally 0 ± 0.3.
+* Muriatic Acid – Hydrochloric acid solution, used to lower pH and TA.
+* MPS – Potassium peroxymonosulfate; non chlorine shock oxidizer.
+* ORP – Oxidation Reduction Potential; a measure of water’s sanitizing power (in mV).
+* pH – Measure of acidity/alkalinity; 7 neutral.
+* Phosphate Remover – Lanthanum chloride compound that precipitates phosphates.
+* Salt Cell – Electrolytic cell in SWG that converts salt to chlorine.
+* Scale – Calcium carbonate deposits from high pH + high CH.
+* Shock – Adding a large dose of oxidizer to break down contaminants and chloramines.
+* Stabilizer – See CYA.
+* TA (Total Alkalinity) – Bicarbonate content; buffer against pH changes.
+* TDS (Total Dissolved Solids) – Sum of all dissolved material; high TDS can affect water balance.
+* Trichlor – Slow dissolving chlorine tablet; contains CYA.
+
+Appendix: Printable One Pager (Ideal Ranges & Log)
+Pool Chemistry Ideal Ranges Card
+Laminate and keep near test kit.
+Parameter
+Ideal Range (Plaster/Vinyl/FG)
+Notes
+Free Chlorine
+1–3 ppm (no CYA) / 3–5 ppm (CYA 30–50)
+FC ? 7.5% of CYA
+Combined Chlorine
+0 – 0.2 ppm
+Shock if >0.2
+pH
+7.2–7.8 (ideal 7.4–7.6)
+SWG: 7.2–7.6
+Total Alkalinity
+80–120 (plaster) / 80–100 (vinyl/FG)
+SWG: 60–80 if scaling risk
+Calcium Hardness
+200–400 / 150–250 / 200–300
+Vinyl can be 150–250
+CYA (stabilizer)
+30–50 outdoor, 0–20 indoor
+Never >100
+Salt (SWG)
+2700–4500 ppm
+Check manufacturer
+Phosphates
+<100 ppb
+
+Metals (Fe, Cu)
+0 ppm (<0.2)
+
+Weekly Log Sheet Template
+Date
+FC
+CC
+pH
+TA
+CH
+CYA
+Salt
+Water Temp
+Chemicals Added
+Notes
+
+
+

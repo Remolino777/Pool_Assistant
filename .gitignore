@@ -1,0 +1,9 @@
+.venv
+.vscode
+.lock
+documentation
+tests
+.env
+pipeline
+pipeline_2
+data
