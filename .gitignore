@@ -1,9 +1,9 @@
 .venv
 .vscode
 .lock
+.base
 documentation
-tests
 .env
 pipeline
 pipeline_2
-data
+.data
