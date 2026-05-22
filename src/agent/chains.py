@@ -2,8 +2,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import Runnable
 from langchain_core.language_models.chat_models import BaseChatModel
 
-from src.agent.state import PlannerOutput   # ← Importamos el modelo Pydantic
-from .prompts import PLANNER_PROMPT
+from state import PlannerOutput   # ← Importamos el modelo Pydantic
+from prompts import PLANNER_PROMPT
 # ================================================================
 # PLANNER CHAIN
 # ================================================================

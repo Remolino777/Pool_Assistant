@@ -1,4 +1,4 @@
-from google.genai import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
 
@@ -11,12 +11,12 @@ def create_llm():
     return ChatGoogleGenerativeAI(
         model="gemini-3-flash-preview",
         google_api_key=GEMINI_API_KEY,
-        temperature=5
+        temperature=0.7
     )
 
 def create_routing_llm():
     return ChatGoogleGenerativeAI(
         model="gemini-2.5-flash-lite",
         google_api_key=GEMINI_API_KEY,
-        temperature=0
+        temperature=0.0
     )
