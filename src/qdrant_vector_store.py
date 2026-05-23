@@ -25,7 +25,7 @@ DEFAULT_CSV_PATH = Path("data/documentos/semantic_search/pool_chemistry_vector_s
 COLLECTION_NAME  = "pool_assistant"
 
 PROJECT_ROOT = Path(__file__).parent.parent.absolute()
-QDRANT_PATH  = PROJECT_ROOT / "qdrant_pool_db"
+QDRANT_PATH  = PROJECT_ROOT / "src" / "data" / "qdrant_pool_db"
 
 # Nombres de vectores: los definimos nosotros para que coincidan
 # entre la creación de la colección y el constructor de QdrantVectorStore.

@@ -1,16 +1,20 @@
-from langchain_core.messages import AIMessage, SystemMessage, HumanMessage
+from langchain_core.messages import AIMessage, SystemMessage, HumanMessage, BaseMessage, RemoveMessage
 from langgraph.types import Command
 from langfuse import observe
-from state import PoolAgentState, ExecutionStep, AgentResult
-from prompts import PLANNER_PROMPT, SYNTHESIZER_PROMPT
-from chains import create_planner_chain
+from typing import List, Literal
+from .state import PoolAgentState, ExecutionStep, AgentResult
+from .prompts import PLANNER_PROMPT, SYNTHESIZER_PROMPT
+from .chains import create_planner_chain
 from src.config.llm import create_llm
-from agents import get_agent_by_name
+from .agents import get_agent_by_name
 # ================================================================
 # CONFIGURATION
 # ================================================================
 llm = create_llm()
 planner_chain = create_planner_chain(llm)  # Initialize the planner chain
+
+TOKEN_LIMIT = 4_000
+MESSAGES_TO_KEEP = 6
 
 # ================================================================
 # HELPERS
@@ -122,6 +126,87 @@ def _build_raw_content(agent_results: dict[str, AgentResult]) -> str:
  
     return "\n\n".join(sections)
  
+def estimated_tokens(messages: List[BaseMessage]) -> int:
+    """
+    Estimación rápida: ~4 caracteres por token.
+    Soporta content str y lista de bloques (tool calls, etc.)
+    """
+    total = 0
+    for msg in messages:
+        if isinstance(msg.content, str):
+            total += len(msg.content) // 4
+        elif isinstance(msg.content, list):
+            for block in msg.content:
+                if isinstance(block, dict):
+                    total += len(block.get("text", "")) // 4
+    return total
+
+# ================================================================
+# CONTEXT NODE  
+# ================================================================
+def build_context_node(
+    state: PoolAgentState,
+) -> Command[Literal["summarize_memory_node", "planner"]]:
+    """
+    Decide si hay que resumir antes de planear.
+    Usa `goto` directo → el memory_router queda fuera del camino crítico.
+    """
+    next_node: Literal["summarize_memory_node", "planner"] = (
+        "summarize_memory_node"
+        if estimated_tokens(state["messages"]) > TOKEN_LIMIT
+        else "planner"
+    )
+
+    return Command(goto=next_node)
+
+# ================================================================
+# SUMMARIZE MEMORY NODE  
+# ================================================================
+def summarize_memory_node(state: PoolAgentState) -> Command[Literal["planner"]]:
+    """
+    1. Calls the LLM to summarize older messages + previous summary.
+    2. Removes old messages from the state (RemoveMessage).
+    3. Saves the updated summary and routes directly to the planner.
+    """
+
+    messages = state.get("messages", [])
+    previous_summary = state.get("conversation_summary", "")
+
+    # ── Guard: No hacer nada si no hay suficientes mensajes ──────────────────
+    if len(messages) <= MESSAGES_TO_KEEP:
+        return Command(goto="planner")
+
+    # ── Build summarization prompt ───────────────────────────────────────────
+    if previous_summary:
+        prompt_text = (
+            f"Previous conversation summary:\n{previous_summary}\n\n"
+            "Extend this summary by incorporating the new messages. "
+            "Be concise, but preserve key facts, decisions, and important context."
+        )
+    else:
+        prompt_text = (
+            "Summarize the following conversation concisely. "
+            "Preserve key facts, decisions, and important context."
+        )
+
+    # ── Call the LLM (Síncrono) ──────────────────────────────────────────────
+    # Usamos llm.invoke en lugar de await llm.ainvoke
+    new_summary_msg = llm.invoke(
+        messages + [HumanMessage(content=prompt_text)]
+    )
+
+    # ── Remove old messages while keeping recent ones ───────────────────────
+    messages_to_delete = messages[:-MESSAGES_TO_KEEP]
+    removals = [RemoveMessage(id=m.id) for m in messages_to_delete]
+
+    return Command(
+        update={
+            "conversation_summary": new_summary_msg.content,
+            "messages": removals,  # add_messages maneja internamente los RemoveMessage
+        },
+        goto="planner",
+    )
+
 # ================================================================
 # PLANNER NODE  
 # ================================================================
@@ -133,7 +218,8 @@ def planner(state: PoolAgentState):
     # ── Context: Use only the last visible agent message + current user input
     agent_messages = [
         m for m in state["messages"]
-        if isinstance(m, AIMessage) and getattr(m, "name", None) == "PiscinaAgent"
+        # Ajustado a "Izel" para coincidir con el nombre que le das en el Synthesizer
+        if isinstance(m, AIMessage) and getattr(m, "name", None) == "Izel"
     ]
     
     last_agent_msg = agent_messages[-1].content if agent_messages else ""
@@ -165,6 +251,9 @@ def planner(state: PoolAgentState):
         update={
             "detected_language": detected_language,
             "execution_plan": plan.execution_plan,
+            # 🛠️ CRÍTICO: Reiniciar variables de estado para el nuevo ciclo
+            "current_step": 0,
+            "agent_results": {},
         },
         goto=goto_node,
     )

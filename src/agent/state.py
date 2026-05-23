@@ -72,7 +72,6 @@ class PlannerOutput(BaseModel):
     """
 
     detected_language: Literal["es", "en"] = Field(
-        default="es",
         description="Language detected in the user's message",
     )
 
@@ -107,6 +106,7 @@ class AgentResult(BaseModel):
 class PoolAgentState(TypedDict):
     # ── Public conversation ──────────────────────────────────────────
     messages: Annotated[List[BaseMessage], add_messages]
+    conversation_summary: str
     # Only user messages and final PoolAgent responses go here.
 
     # ── Planner output ───────────────────────────────────────────────

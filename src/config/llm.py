@@ -11,7 +11,7 @@ def create_llm():
     return ChatGoogleGenerativeAI(
         model="gemini-3-flash-preview",
         google_api_key=GEMINI_API_KEY,
-        temperature=0.7
+        temperature=0.2
     )
 
 def create_routing_llm():
@@ -20,3 +20,11 @@ def create_routing_llm():
         google_api_key=GEMINI_API_KEY,
         temperature=0.0
     )
+
+def create_synthesizer_llm(): # Para el Synthesizer y el maintenance agent, queremos un modelo que sea bueno generando texto coherente y amigable, pero no necesitamos la última versión. Además, un modelo más ligero puede ser más rápido y suficiente para esta tarea.    
+    return ChatGoogleGenerativeAI(
+        model="gemini-2.5-flash-lite",
+        google_api_key=GEMINI_API_KEY,
+        temperature=0.4
+    )
+
