@@ -1,12 +1,13 @@
 import os
 import sys
 from datetime import datetime
+from streamlit import secrets
 from dotenv import load_dotenv
 # ==========================================
 # 0. CONFIGURAR LLM ANTES DE TODO
 # ==========================================
 load_dotenv()
-os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY", "")
+os.environ["GEMINI_API_KEY"] = os.getenv("GEMINI_API_KEY", "") or secrets.get("GEMINI_API_KEY", "")
 
 import giskard
 giskard.llm.set_llm_model("gemini/gemini-2.0-flash")

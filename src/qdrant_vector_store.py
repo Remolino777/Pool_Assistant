@@ -3,7 +3,7 @@ import os
 import shutil
 from pathlib import Path
 import pandas as pd
-
+from streamlit import secrets
 from langchain_core.documents import Document
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_qdrant import QdrantVectorStore, FastEmbedSparse, RetrievalMode
@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ========================= CONFIG =========================
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or secrets.get("GEMINI_API_KEY")  #
 
 DEFAULT_CSV_PATH = Path("data/documentos/semantic_search/pool_chemistry_vector_store_chunks.csv")
 COLLECTION_NAME  = "pool_assistant"

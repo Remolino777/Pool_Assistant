@@ -7,17 +7,17 @@ from src.qdrant_vector_store import cargar_vector_store
 from qdrant_client.http import models
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
-
+from streamlit import secrets
 # ==========================================
 # 0. NEO4J INITIALIZATION
 # ==========================================
 
 load_dotenv()
 
-NEO4J_URI      = os.getenv("NEO4J_URI")
-NEO4J_USER     = os.getenv("NEO4J_USER")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
-NEO4J_DATABASE = os.getenv("NEO4J_DATABASE")
+NEO4J_URI      = os.getenv("NEO4J_URI") or secrets.get("NEO4J_URI")
+NEO4J_USER     = os.getenv("NEO4J_USER") or secrets.get("NEO4J_USER")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") or secrets.get("NEO4J_PASSWORD")
+NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") or secrets.get("NEO4J_DATABASE")
 
 neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
 

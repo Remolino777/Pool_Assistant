@@ -15,6 +15,7 @@ import os
 import pandas as pd
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
+from streamlit import secrets
 
 # ─────────────────────────────────────────────
 # 1. CONFIGURACIÓN
@@ -22,10 +23,10 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Carga variables desde .env si existe
 
-NEO4J_URI      = os.getenv("NEO4J_URI")
-NEO4J_USER     = os.getenv("NEO4J_USER")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
-NEO4J_DATABASE = os.getenv("NEO4J_DATABASE")
+NEO4J_URI      = os.getenv("NEO4J_URI") or secrets.get("NEO4J_URI")  # Ej: "neo4j+s://<tu-instancia>.databases.neo4j.io"    
+NEO4J_USER     = os.getenv("NEO4J_USER") or secrets.get("NEO4J_USER")
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") or secrets.get("NEO4J_PASSWORD")
+NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") or secrets.get("NEO4J_DATABASE")
 
 # Rutas a los CSV (ajustá si están en otra carpeta)
 NODES_CSV = r"data\documentos\pool_chemistry_nodes.csv"

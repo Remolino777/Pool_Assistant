@@ -1,9 +1,9 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import os
-
+from streamlit import secrets
 load_dotenv()  # Carga variables desde .env si existe
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or secrets.get("GEMINI_API_KEY")  # Intenta obtener la clave de Streamlit Secrets si no está en .env
 
 
 
