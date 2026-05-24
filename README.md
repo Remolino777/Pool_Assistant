@@ -1,4 +1,4 @@
-[image alt](https://github.com/Remolino777/Pool_Assistant/blob/3cd8d219aeb33de51a302c44da7a56c5df23a798/banner.png)
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/3cd8d219aeb33de51a302c44da7a56c5df23a798/banner.png)
 # Pool Chemistry & Maintenance AI Assistant 🏊‍♂️🤖
 
 A multi-agent generative AI orchestrator built to diagnose, prescribe, and manage pool chemistry and hardware maintenance. This project leverages a **LangGraph** supervisor workflow, integrating a **Neo4j** knowledge graph and a **Qdrant** vector store for hybrid search retrieval, fully observable via **Langfuse** and systematically evaluated via **Giskard**.
