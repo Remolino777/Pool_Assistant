@@ -31,7 +31,6 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "pool_assistant", from = "src"}]
 
 [tool.poetry.group.eval]
 optional = true
