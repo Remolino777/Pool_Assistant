@@ -4,7 +4,7 @@
 A multi-agent generative AI orchestrator built to diagnose, prescribe, and manage pool chemistry and hardware maintenance. This project leverages a **LangGraph** supervisor workflow, integrating a **Neo4j** knowledge graph and a **Qdrant** vector store for hybrid search retrieval, fully observable via **Langfuse** and systematically evaluated via **Giskard**.
 
 ## 🏗 Architecture & Core Concepts
-
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
 This system breaks away from standard linear RAG by employing a robust **Multi-Agent Orchestration** pattern. 
 
 The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
