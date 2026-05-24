@@ -3,8 +3,13 @@
 
 A multi-agent generative AI orchestrator built to diagnose, prescribe, and manage pool chemistry and hardware maintenance. This project leverages a **LangGraph** supervisor workflow, integrating a **Neo4j** knowledge graph and a **Qdrant** vector store for hybrid search retrieval, fully observable via **Langfuse** and systematically evaluated via **Giskard**.
 
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/be04545e4e0c95bd5067e9afbad815066cb8244a/images/Workflow.jpg)
+
+----------------------------------------------------------------------------------------------------------
+
 ## 🏗 Architecture & Core Concepts
 ![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
+
 This system breaks away from standard linear RAG by employing a robust **Multi-Agent Orchestration** pattern. 
 
 The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
@@ -26,6 +31,7 @@ The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
 
 
 
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
 ## 📊 Advanced Observability with Langfuse
 
 The asynchronous, cyclical, and distributed nature of a Multi-Agent system demands rigorous tracing. This project natively integrates **Langfuse** to monitor the performance, costs, and behavior of the LangGraph orchestrator in real time.
@@ -37,6 +43,8 @@ The asynchronous, cyclical, and distributed nature of a Multi-Agent system deman
 * **Token & Cost Accounting:** Granular logging of input and output token consumption for the utilized models (`gemini-3-flash-preview` for critical reasoning and `gemini-2.5-flash-lite` for routing and synthesis), validating the efficiency of the memory compression node (`summarize_memory_node`).
 
 
+
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
 ## 🧪 Automated Evaluation & Security with Giskard (Results Analysis)
 
 Our pipeline subjected the orchestrator to automated adversarial scrutiny using **Giskard**, acting as an LLM-as-a-Judge to find vulnerabilities before deploying to production.
