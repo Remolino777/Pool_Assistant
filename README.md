@@ -1,4 +1,5 @@
 ![image alt](https://github.com/Remolino777/Pool_Assistant/blob/3cd8d219aeb33de51a302c44da7a56c5df23a798/banner.png)
+
 # Pool Chemistry & Maintenance AI Assistant 🏊‍♂️🤖
 
 A multi-agent generative AI orchestrator built to diagnose, prescribe, and manage pool chemistry and hardware maintenance. This project leverages a **LangGraph** supervisor workflow, integrating a **Neo4j** knowledge graph and a **Qdrant** vector store for hybrid search retrieval, fully observable via **Langfuse** and systematically evaluated via **Giskard**.
@@ -32,6 +33,7 @@ The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
 
 
 ![image alt](https://github.com/Remolino777/Pool_Assistant/blob/b041ab9c1f47f2f6af908560f0bf3339ad26462f/images/langfuse_v1.jpg)
+
 ## 📊 Advanced Observability with Langfuse
 
 The asynchronous, cyclical, and distributed nature of a Multi-Agent system demands rigorous tracing. This project natively integrates **Langfuse** to monitor the performance, costs, and behavior of the LangGraph orchestrator in real time.
@@ -44,7 +46,8 @@ The asynchronous, cyclical, and distributed nature of a Multi-Agent system deman
 
 
 
-![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/39f5a3629c02005e9cadb7e1d698ddfdb2c73c6e/images/gizkard_eval.jpg)
+
 ## 🧪 Automated Evaluation & Security with Giskard (Results Analysis)
 
 Our pipeline subjected the orchestrator to automated adversarial scrutiny using **Giskard**, acting as an LLM-as-a-Judge to find vulnerabilities before deploying to production.
@@ -68,4 +71,4 @@ Giskard's instrumentation doesn't just measure errors; it gives us the exact act
 3. **Privacy Filter (PII):** This highlights the need to implement pre-processing (e.g., using a lightweight classification model or Regex rules in the `build_context_node`) before the prompt reaches the `planner`, to automatically mask or strip names, emails, and physical addresses.
 4. **Business Rule Shielding:** The `SYNTHESIZER_PROMPT` must be heavily guarded, requiring it to adopt a purely engineering and chemical stance. We must strictly prohibit lifestyle advice, physical health tips, or assumptions about user capabilities based on age or gender.
 =======
->>>>>>> 6e6ccfc574fc76766e4003bbb87ffc60e61c4dbf
+
