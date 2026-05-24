@@ -1,3 +1,4 @@
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/3cd8d219aeb33de51a302c44da7a56c5df23a798/banner.png)
 # Pool Chemistry & Maintenance AI Assistant 🏊‍♂️🤖
 
 A multi-agent generative AI orchestrator built to diagnose, prescribe, and manage pool chemistry and hardware maintenance. This project leverages a **LangGraph** supervisor workflow, integrating a **Neo4j** knowledge graph and a **Qdrant** vector store for hybrid search retrieval, fully observable via **Langfuse** and systematically evaluated via **Giskard**.
@@ -21,6 +22,7 @@ The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
   * [Qdrant](https://qdrant.tech/) (Local Hybrid Vector Store)
 * **Embeddings:** `gemini-embedding-001` (Dense) + `FastEmbedSparse` (Sparse)
 * **Validation:** Pydantic (State management & Structured Outputs)
+<<<<<<< HEAD
 
 
 
@@ -57,3 +59,5 @@ Giskard's instrumentation doesn't just measure errors; it gives us the exact act
 2. **Scope Expansion (Safe Maintenance):** We need to add a specific tool in `tools.py` or a node in our Neo4j graph database that explicitly handles **chemical disposal and waste**, ensuring the `maintenance_agent` does not dismiss it as "Out of Scope" and instead provides safe, environmental guidelines.
 3. **Privacy Filter (PII):** This highlights the need to implement pre-processing (e.g., using a lightweight classification model or Regex rules in the `build_context_node`) before the prompt reaches the `planner`, to automatically mask or strip names, emails, and physical addresses.
 4. **Business Rule Shielding:** The `SYNTHESIZER_PROMPT` must be heavily guarded, requiring it to adopt a purely engineering and chemical stance. We must strictly prohibit lifestyle advice, physical health tips, or assumptions about user capabilities based on age or gender.
+=======
+>>>>>>> 6e6ccfc574fc76766e4003bbb87ffc60e61c4dbf
