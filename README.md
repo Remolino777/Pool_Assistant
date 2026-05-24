@@ -31,7 +31,7 @@ The core pipeline operates on a Planner-Orchestrator-Synthesizer flow:
 
 
 
-![image alt](https://github.com/Remolino777/Pool_Assistant/blob/8bb73061cab21696dd3b7166c2f8b56b4372ddf0/images/Orchestrator_diagram.png)
+![image alt](https://github.com/Remolino777/Pool_Assistant/blob/b041ab9c1f47f2f6af908560f0bf3339ad26462f/images/langfuse_v1.jpg)
 ## 📊 Advanced Observability with Langfuse
 
 The asynchronous, cyclical, and distributed nature of a Multi-Agent system demands rigorous tracing. This project natively integrates **Langfuse** to monitor the performance, costs, and behavior of the LangGraph orchestrator in real time.
