@@ -14,38 +14,48 @@ from streamlit import secrets
 
 load_dotenv()
 
-NEO4J_URI      = os.getenv("NEO4J_URI") or secrets.get("NEO4J_URI")
-NEO4J_USER     = os.getenv("NEO4J_USER") or secrets.get("NEO4J_USER")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") or secrets.get("NEO4J_PASSWORD")
-NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") or secrets.get("NEO4J_DATABASE")
+_neo4j_driver = None
 
-neo4j_driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
+def _get_secret(key: str, default: str = None) -> Optional[str]:
+    """Lee un secret desde env vars o st.secrets, en ese orden."""
+    return os.getenv(key) or secrets.get(key) or default
+
+def get_neo4j_driver():
+    global _neo4j_driver
+    if _neo4j_driver is None:
+        uri      = _get_secret("NEO4J_URI")
+        user     = _get_secret("NEO4J_USER", "neo4j")
+        password = _get_secret("NEO4J_PASSWORD")
+
+        if not uri:
+            raise ValueError(
+                "NEO4J_URI no está configurado. "
+                "Agrégalo en .streamlit/secrets.toml o en los Secrets de Streamlit Cloud."
+            )
+
+        _neo4j_driver = GraphDatabase.driver(uri, auth=(user, password))
+    return _neo4j_driver
+
 
 def _execute_cypher(query: str, parameters: Dict[str, Any] = None) -> List[Dict[str, Any]]:
     """Helper function to execute Cypher queries safely."""
     if parameters is None:
         parameters = {}
-        
+
+    # ✅ Usa get_neo4j_driver() en lugar de la variable inexistente `neo4j_driver`
+    database = _get_secret("NEO4J_DATABASE")
+
     results = []
     try:
-        with neo4j_driver.session(database=NEO4J_DATABASE) as session:
+        with get_neo4j_driver().session(database=database) as session:
             records = session.run(query, parameters)
             for record in records:
                 results.append(record.data())
     except Exception as e:
         print(f"Neo4j Execution Error: {e}")
         return [{"error": str(e)}]
-        
-    return results
 
-# 2. LOAD THE VECTOR STORE GLOBALLY (ONLY ONCE)
-# This prevents the "already accessed by another instance" error.
-print("Loading Qdrant Vector Store globally...")
-try:
-    GLOBAL_VECTOR_STORE = cargar_vector_store()
-except Exception as e:
-    print(f"Warning: Could not load vector store. Did you run initialization? Error: {e}")
-    GLOBAL_VECTOR_STORE = None
+    return results
 
 
 
