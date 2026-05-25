@@ -22,8 +22,8 @@ from langgraph_supervisor import create_supervisor
 from langfuse import observe
 
 from .state import AgentName
-from src.config.llm import create_llm, create_routing_llm, create_synthesizer_llm
-from src.agent.prompts import (
+from ..config.llm import create_llm, create_routing_llm, create_synthesizer_llm
+from ..agent.prompts import (
     GENERAL_PROMPT,
     OOS_PROMPT,
     SUPERVISOR_PROMPT,

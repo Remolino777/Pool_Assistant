@@ -3,7 +3,7 @@ import os
 from typing import List, Optional, Dict, Any, Literal
 from math import log10
 # VECTOR STORE AND GRAPH DB CLIENTS 
-from src.qdrant_vector_store import cargar_vector_store
+from ..qdrant_vector_store import cargar_vector_store
 from qdrant_client.http import models
 from neo4j import GraphDatabase
 from dotenv import load_dotenv
