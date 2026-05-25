@@ -27,6 +27,10 @@ def get_neo4j_driver():
         user     = _get_secret("NEO4J_USER", "neo4j")
         password = _get_secret("NEO4J_PASSWORD")
 
+        import streamlit as st
+        st.write("DEBUG secrets keys:", list(st.secrets.keys()))
+        st.write("NEO4J_URI:", uri)
+        
         if not uri:
             raise ValueError(
                 "NEO4J_URI no está configurado. "
