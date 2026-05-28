@@ -9,7 +9,7 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 from streamlit import secrets
 # ==========================================
-# 0. NEO4J INITIALIZATION
+# 0. NEO4J INITIALIZATION 
 # ==========================================
 
 load_dotenv()
@@ -61,8 +61,19 @@ def _execute_cypher(query: str, parameters: Dict[str, Any] = None) -> List[Dict[
 
     return results
 
+# ==========================================
+# 0.0 VECTOR STORE INITIALIZATION
+# ==========================================
 
+GLOBAL_VECTOR_STORE = None
 
+def get_vector_store():
+    global GLOBAL_VECTOR_STORE
+
+    if GLOBAL_VECTOR_STORE is None:
+        GLOBAL_VECTOR_STORE = cargar_vector_store()
+
+    return GLOBAL_VECTOR_STORE
 
 # ==========================================
 # 1. DIAGNOSIS AGENT TOOLS
@@ -88,10 +99,10 @@ def search_troubleshooting_kb(query: str, limit: int = 3) -> List[Dict[str, Any]
     Executes a dense/sparse hybrid search on the vector store to find unstructured 
     answers when a symptom doesn't have an exact graph node mapping.
     """
-    if not GLOBAL_VECTOR_STORE:
-        return [{"error": "Vector store not initialized."}]
-    
-    store = GLOBAL_VECTOR_STORE
+    try:
+        store = get_vector_store()
+    except Exception as e:
+        return [{"error": f"Vector store initialization failed: {str(e)}"}]
     
     # In LangChain Qdrant, metadata fields are nested under the "metadata" key in the payload.
     category_filter = models.Filter(
@@ -148,11 +159,11 @@ def get_dosing_formulas(chemical_id: str, pool_volume_kL: Optional[float] = None
     engineering formulas, maximum single-dose thresholds, and application methods.
     """
     
-    if not GLOBAL_VECTOR_STORE:
-        return [{"error": "Vector store not initialized."}]
+    try:
+        store = get_vector_store()
+    except Exception as e:
+        return [{"error": f"Vector store initialization failed: {str(e)}"}]
 
-    store = GLOBAL_VECTOR_STORE
-    
     # Convert "C_MuriaticAcid" -> "MuriaticAcid" for better natural language matching
     clean_chemical = chemical_id.replace("C_", "")
     search_query = f"dosing formulas application instructions safety limits for {clean_chemical}"
@@ -221,9 +232,10 @@ def search_equipment_manuals(query: str) -> List[Dict[str, Any]]:
     Searches the vector store to retrieve technical operational guides, failure mode 
     symptoms, and physical maintenance workarounds.
     """
-    if not GLOBAL_VECTOR_STORE:
-        return [{"error": "Vector store not initialized."}]
-    store = GLOBAL_VECTOR_STORE
+    try:
+        store = get_vector_store()
+    except Exception as e:
+        return [{"error": f"Vector store initialization failed: {str(e)}"}]
 
     category_filter = models.Filter(
         must=[
@@ -252,9 +264,10 @@ def search_maintenance_procedures(procedure_type: str, environmental_factor: Opt
     Queries the vector store to extract chronological checklists, safety precautions, 
     and tools required for standard upkeep tasks.
     """
-    if not GLOBAL_VECTOR_STORE:
-        return [{"error": "Vector store not initialized."}] 
-    store = GLOBAL_VECTOR_STORE
+    try:
+        store = get_vector_store()
+    except Exception as e:
+        return [{"error": f"Vector store initialization failed: {str(e)}"}]
 
     # Build a richer semantic query
     search_query = procedure_type
