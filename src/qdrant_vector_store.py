@@ -21,7 +21,7 @@ load_dotenv()
 # ========================= CONFIG =========================
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or secrets.get("GEMINI_API_KEY")  #
 
-DEFAULT_CSV_PATH = Path("data/documentos/semantic_search/pool_chemistry_vector_store_chunks.csv")
+DEFAULT_CSV_PATH = Path(r".data\documentos\semantic_search\pool_manual_chunks.csv")
 COLLECTION_NAME  = "pool_assistant"
 
 PROJECT_ROOT = Path(__file__).parent.parent.absolute()

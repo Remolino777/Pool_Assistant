@@ -23,14 +23,24 @@ from streamlit import secrets
 
 load_dotenv()  # Carga variables desde .env si existe
 
-NEO4J_URI      = os.getenv("NEO4J_URI") or secrets.get("NEO4J_URI")  # Ej: "neo4j+s://<tu-instancia>.databases.neo4j.io"    
-NEO4J_USER     = os.getenv("NEO4J_USER") or secrets.get("NEO4J_USER")
-NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") or secrets.get("NEO4J_PASSWORD")
-NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") or secrets.get("NEO4J_DATABASE")
+# NEO4J_URI      = os.getenv("NEO4J_URI") or secrets.get("NEO4J_URI")     
+# NEO4J_USER     = os.getenv("NEO4J_USER") or secrets.get("NEO4J_USER")
+# NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") or secrets.get("NEO4J_PASSWORD")
+# NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") or secrets.get("NEO4J_DATABASE")
+
+NEO4J_URI      = os.getenv("NEO4J_URI")     
+NEO4J_USER     = os.getenv("NEO4J_USER") 
+NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD") 
+NEO4J_DATABASE = os.getenv("NEO4J_DATABASE") 
 
 # Rutas a los CSV (ajustá si están en otra carpeta)
-NODES_CSV = r"data\documentos\pool_chemistry_nodes.csv"
-EDGES_CSV = r"data\documentos\pool_chemistry_edges.csv"
+NODES_CSV = r".data\documentos\pool_nodes.csv"
+EDGES_CSV = r".data\documentos\pool_edges.csv"
+
+print("URI:", NEO4J_URI)
+print("USER:", NEO4J_USER)
+print("DATABASE:", NEO4J_DATABASE)
+print("PASSWORD:", "OK" if NEO4J_PASSWORD else "EMPTY")
 
 
 # ─────────────────────────────────────────────
@@ -107,10 +117,10 @@ def load_edges(session, df: pd.DataFrame):
     print(f"\n🔗 Cargando {len(df)} relaciones...")
 
     for _, row in df.iterrows():
-        source     = row["source"]
-        target     = row["target"]
-        rel_type   = row["type"]
-        properties = row.get("properties", "")
+        source = row["source"]
+        target = row["target"]
+        rel_type = row["type"]
+        properties = row.get("description", "")
 
         # Neo4j no permite tipos de relación dinámicos con parámetros,
         # por eso se inyecta con f-string (los valores vienen de tu propio CSV).
